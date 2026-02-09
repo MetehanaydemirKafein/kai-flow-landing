@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function ContentSection() {
   return (
-    <section id="content" className="py-16 md:py-32 bg-black">
+    <section id="content" className="min-h-screen py-16 md:py-20 bg-black flex items-center overflow-hidden scroll-mt-16">
       <div className="mx-auto max-w-5xl space-y-8 px-6 md:space-y-16">
         {/* Başlık */}
         <h2 className="relative z-10 max-w-xl text-4xl font-medium lg:text-5xl text-white">

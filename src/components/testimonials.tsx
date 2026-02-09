@@ -1,9 +1,6 @@
-// "use-client";
-// import { TestimonialsColumn } from "@/components/ui/testimonials-columns-1";
-// import { motion } from "motion/react";
+"use client";
+import { TestimonialsColumn } from "@/components/ui/testimonials-columns-1";
 
-// Eski testimonials sistemi - şimdilik yorum satırında
-/*
 const testimonials = [
   {
     text: "This AI workflow builder helped us automate complex tasks effortlessly. Integrating LLMs, tools, and condition-based routing is now drag-and-drop simple.",
@@ -48,13 +45,13 @@ const testimonials = [
     role: "Marketing Automation Lead",
   },
   {
-    text: "The workflow engine fits perfectly into our tech stack. It’s flexible enough for engineers and intuitive enough for analysts.",
+    text: "The workflow engine fits perfectly into our tech stack. It's flexible enough for engineers and intuitive enough for analysts.",
     image: "https://randomuser.me/api/portraits/women/8.jpg",
     name: "Sana Sheikh",
     role: "AI Workflow Consultant",
   },
   {
-    text: "Our team's productivity skyrocketed. We now ship AI prototypes with LangChain, vector stores, and retrievers in record time.",
+    text: "We now ship AI prototypes with LangChain, vector stores, and retrievers in record time.",
     image: "https://randomuser.me/api/portraits/men/9.jpg",
     name: "Hassan Ali",
     role: "ML Ops Engineer",
@@ -69,20 +66,14 @@ const Testimonials = () => {
   return (
     <section id="testimonials" className="bg-black my-20 relative">
       <div className="container z-10 mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-          viewport={{ once: true }}
-          className="flex flex-col items-center justify-center max-w-[540px] mx-auto"
-        >
+        <div className="flex flex-col items-center justify-center max-w-[540px] mx-auto">
           <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold tracking-tighter mt-5 text-white">
             What our users say
           </h2>
           <p className="text-center mt-5 opacity-75 text-white/70">
             See what our customers have to say about us.
           </p>
-        </motion.div>
+        </div>
 
         <div className="flex justify-center gap-6 mt-10 [mask-image:linear-gradient(to_bottom,transparent,black_25%,black_75%,transparent)] max-h-[740px] overflow-hidden">
           <TestimonialsColumn testimonials={firstColumn} duration={15} />
@@ -103,9 +94,3 @@ const Testimonials = () => {
 };
 
 export default Testimonials;
-*/
-
-// Geçici olarak boş bir bileşen export ediyoruz
-const Testimonials = () => {
-  return null;
-};

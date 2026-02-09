@@ -13,16 +13,16 @@ const communityItems = [
     ),
     stats: "",
     bgColor: "bg-indigo-600/20 border-indigo-500/30",
-    href: "#",
+    href: "https://discord.gg/kafein",
   },
   {
     title: "X Updates",
     description:
       "Follow us for the latest updates, tips, and AI workflow best practices.",
-    icon: <Image src={"/X.svg"} alt="discordicon" width={40} height={40} />,
+    icon: <Image src={"/x.svg"} alt="X icon" width={40} height={40} />,
     stats: "",
     bgColor: "bg-blue-600/20 border-blue-500/30",
-    href: "#",
+    href: "https://x.com/kami_0w",
   },
   {
     title: "YouTube Tutorials",
@@ -31,13 +31,13 @@ const communityItems = [
     icon: <Youtube className="w-8 h-8" />,
     stats: "",
     bgColor: "bg-red-600/20 border-red-500/30",
-    href: "#",
+    href: "https://youtube.com/@kafein",
   },
 ];
 
 export default function CommunitySection() {
   return (
-    <section id="community" className="py-16 md:py-32 bg-black">
+    <section id="community" className="min-h-screen py-16 md:py-20 bg-slate-950 flex items-center overflow-hidden scroll-mt-16">
       <div className="mx-auto max-w-6xl px-6">
         {/* Header */}
         <div className="text-center mb-16">
@@ -55,7 +55,7 @@ export default function CommunitySection() {
           {communityItems.map((item, index) => (
             <div
               key={index}
-              className={`relative group p-8 rounded-2xl backdrop-blur-sm border transition-all duration-300 hover:scale-105 ${item.bgColor}`}
+              className={`relative group p-8 rounded-2xl border transition-all duration-300 hover:scale-105 ${item.bgColor}`}
             >
               <div className="flex flex-col items-center text-center">
                 <div className="mb-4 text-white">{item.icon}</div>
@@ -70,9 +70,11 @@ export default function CommunitySection() {
                 </span>
                 <Link
                   href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-white/90 hover:text-white text-sm font-medium underline underline-offset-4 transition-colors"
                 >
-                  Learn More →
+                  Join Now →
                 </Link>
               </div>
             </div>
@@ -80,7 +82,7 @@ export default function CommunitySection() {
         </div>
 
         {/* CTA Section */}
-        <div className="text-center bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-12">
+        <div className="text-center bg-white/5 rounded-2xl border border-white/10 p-12">
           <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
             Ready to Join the Community?
           </h3>
@@ -94,7 +96,7 @@ export default function CommunitySection() {
             className="bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105"
           >
             <Link
-              href="#"
+              href="https://discord.gg/kafein"
               target="_blank"
               rel="noopener noreferrer"
               className="gap-3"

@@ -1,5 +1,6 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@radix-ui/react-tabs";
 import { Layout, Pointer, Zap } from "lucide-react";
+import Image from "next/image";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -80,7 +81,7 @@ const Feature108 = ({
   ],
 }: Feature108Props) => {
   return (
-    <section className="py-32 bg-black">
+    <section id="features" className="min-h-screen py-16 md:py-20 bg-black flex items-center overflow-hidden scroll-mt-16">
       <div className="container mx-auto">
         <div className="flex flex-col items-center gap-4 text-center">
           <h1 className="max-w-2xl text-3xl font-semibold md:text-4xl text-white">
@@ -100,12 +101,12 @@ const Feature108 = ({
               </TabsTrigger>
             ))}
           </TabsList>
-          <div className="mx-auto mt-8 max-w-screen-xl rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 p-6 lg:p-16">
+          <div className="mx-auto mt-8 max-w-screen-xl rounded-2xl bg-white/5 border border-white/10 p-6 lg:p-10">
             {tabs.map((tab) => (
               <TabsContent
                 key={tab.value}
                 value={tab.value}
-                className="grid place-items-center gap-20 lg:grid-cols-2 lg:gap-10"
+                className="grid place-items-center gap-10 lg:grid-cols-2 lg:gap-8"
               >
                 <div className="flex flex-col gap-5">
                   <Badge
@@ -114,17 +115,20 @@ const Feature108 = ({
                   >
                     {tab.content.badge}
                   </Badge>
-                  <h3 className="text-3xl font-semibold lg:text-5xl text-white">
+                  <h3 className="text-2xl font-semibold lg:text-4xl text-white">
                     {tab.content.title}
                   </h3>
                   <p className="text-white/80 lg:text-lg">
                     {tab.content.description}
                   </p>
                 </div>
-                <img
+                <Image
                   src={tab.content.imageSrc}
                   alt={tab.content.imageAlt}
-                  className="rounded-xl border border-white/10"
+                  width={800}
+                  height={600}
+                  className="rounded-xl border border-white/10 max-h-[40vh] w-auto object-contain"
+                  priority={false}
                 />
               </TabsContent>
             ))}

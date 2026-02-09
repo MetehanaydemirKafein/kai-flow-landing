@@ -5,13 +5,14 @@ const links = [
   { title: "Features", href: "#features" },
   { title: "Integrations", href: "#integrations" },
   { title: "Content", href: "#content" },
-  { title: "Community", href: "#team" },
+  { title: "FAQ", href: "#faq" },
+  { title: "Community", href: "#community" },
   { title: "Contributors", href: "#contributors" },
 ];
 
 export default function FooterSection() {
   return (
-    <footer className="py-16 md:py-32 bg-black">
+    <footer className="py-16 md:py-20 bg-black overflow-hidden">
       <div className="mx-auto max-w-5xl px-6">
         <Link href="/" aria-label="go home" className="mx-auto block size-fit">
           <Image
@@ -36,7 +37,7 @@ export default function FooterSection() {
         </div>
         <div className="my-8 flex flex-wrap justify-center gap-6 text-sm">
           <Link
-            href="#"
+            href="https://x.com/kami_0w"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="X/Twitter"
@@ -56,7 +57,7 @@ export default function FooterSection() {
             </svg>
           </Link>
           <Link
-            href="#"
+            href="https://www.linkedin.com/company/kafein"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
@@ -76,7 +77,7 @@ export default function FooterSection() {
             </svg>
           </Link>
           <Link
-            href="#"
+            href="https://www.facebook.com/kafein"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Facebook"
@@ -97,7 +98,7 @@ export default function FooterSection() {
           </Link>
 
           <Link
-            href="#"
+            href="https://www.instagram.com/kafein"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram"
@@ -117,7 +118,7 @@ export default function FooterSection() {
             </svg>
           </Link>
           <Link
-            href="#"
+            href="https://www.tiktok.com/@kafein"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="TikTok"
