@@ -1,8 +1,10 @@
 "use client";
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 
 export function DemoButton() {
   const [showComingSoon, setShowComingSoon] = useState(false);
+  const t = useTranslations("hero");
 
   return (
     <button
@@ -10,7 +12,7 @@ export function DemoButton() {
         setShowComingSoon(true);
         setTimeout(() => setShowComingSoon(false), 2000);
       }}
-      className="group bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-xl font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 hover:shadow-lg flex items-center gap-2 min-w-[160px] justify-center cursor-pointer"
+      className="group bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-xl font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 hover:shadow-lg flex items-center gap-2 min-w-[140px] sm:min-w-[160px] justify-center cursor-pointer"
     >
       <svg
         className="w-5 h-5"
@@ -26,7 +28,7 @@ export function DemoButton() {
         />
       </svg>
       <span className="transition-all duration-300">
-        {showComingSoon ? "Coming Soon" : "Live Demo"}
+        {showComingSoon ? t("comingSoon") : t("bookDemo")}
       </span>
     </button>
   );

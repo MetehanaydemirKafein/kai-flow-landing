@@ -1,0 +1,123 @@
+{
+  "header": {
+    "features": "Features",
+    "integrations": "Integrations",
+    "content": "Content",
+    "faq": "FAQ",
+    "contributors": "Contributors",
+    "bookDemo": "Book Demo",
+    "comingSoon": "Coming Soon",
+    "starOnGithub": "Star on GitHub"
+  },
+  "hero": {
+    "title": "KAI Flow",
+    "subtitle": "Next-Gen AI Workflow Automation",
+    "description": "Transform your business with intelligent AI agents that automate complex workflows, seamlessly integrate with any API, and work autonomously 24/7 to solve your most challenging operational tasks.",
+    "github": "GitHub",
+    "bookDemo": "Book Demo",
+    "comingSoon": "Coming Soon"
+  },
+  "features": {
+    "badge": "KAI Flow Features",
+    "heading": "Intelligent AI Workflow Automation Platform",
+    "description": "Build, deploy, and manage AI agents with powerful automation capabilities.",
+    "tabs": {
+      "chat": {
+        "label": "Chat",
+        "badge": "AI Communication",
+        "title": "Natural language interactions with your AI agents.",
+        "description": "Enable seamless conversations with your AI agents through natural language processing. Build intelligent chatbots that understand context and provide meaningful responses.",
+        "button": "Try Chat"
+      },
+      "export": {
+        "label": "Export",
+        "badge": "Data Export",
+        "title": "Export your data in multiple formats.",
+        "description": "Seamlessly export your workflow data, results, and configurations in various formats including JSON, CSV, and XML. Maintain full control over your data.",
+        "button": "Export Data"
+      },
+      "rag": {
+        "label": "RAG",
+        "badge": "Retrieval Augmented",
+        "title": "Enhance AI with your knowledge base.",
+        "description": "Implement Retrieval Augmented Generation to connect your AI agents with external knowledge sources. Create more accurate and contextual responses.",
+        "button": "Setup RAG"
+      },
+      "lowCode": {
+        "label": "Low Code",
+        "badge": "Visual Builder",
+        "title": "Build workflows without coding.",
+        "description": "Create complex AI workflows using our intuitive drag-and-drop interface. No coding required - just connect nodes and deploy your automation.",
+        "button": "Start Building"
+      }
+    }
+  },
+  "integrations": {
+    "ecosystem": "Ecosystem",
+    "heading": "Powering workflows across",
+    "headingHighlight": "your entire stack",
+    "description": "From LLMs to databases, from messaging to analytics — connect everything your AI needs",
+    "aiIntegrations": "AI Integrations",
+    "businessCases": "Business Cases",
+    "setupTime": "Setup Time",
+    "setupTimeValue": "5 min",
+    "exploreAll": "Explore all integrations",
+    "noCreditCard": "No credit card required to get started"
+  },
+  "content": {
+    "heading": "More than automation — a full visual backend platform",
+    "description1": "Our platform isn't just about drag-and-drop workflows.",
+    "descriptionHighlight": "It's a full-stack automation ecosystem",
+    "description2": "— connecting APIs, databases, logic, and LLMs.",
+    "description3": "Whether you're automating tasks, building internal tools, or powering your product's backend — the system scales with your ideas.",
+    "realtimeTriggers": "Realtime Triggers",
+    "realtimeTriggersDesc": "Instantly respond to events from webhooks, cron jobs, or external APIs.",
+    "modularLogic": "Modular Logic",
+    "modularLogicDesc": "Build complex flows with conditions, loops, and custom functions — no vendor lock-in."
+  },
+  "faq": {
+    "heading": "Frequently Asked Questions",
+    "description": "Everything you need to know about KAI Flow",
+    "items": [
+      {
+        "question": "What is KAI Flow?",
+        "answer": "KAI Flow is an intelligent AI workflow automation platform that enables you to build, deploy, and manage AI agents with powerful automation capabilities. It seamlessly integrates with various APIs and works autonomously to solve complex operational tasks."
+      },
+      {
+        "question": "How does KAI Flow integrate with other tools?",
+        "answer": "KAI Flow supports integration with a wide range of tools and platforms including OpenAI, Claude, Gemini, Replit, and many more. You can easily connect your existing tools through our API or use our pre-built integrations."
+      },
+      {
+        "question": "Do I need coding knowledge to use KAI Flow?",
+        "answer": "No! KAI Flow features a low-code visual builder that allows you to create complex AI workflows using an intuitive drag-and-drop interface. However, if you're a developer, you can also leverage our powerful API for advanced customizations."
+      },
+      {
+        "question": "What is RAG (Retrieval Augmented Generation)?",
+        "answer": "RAG is a technique that enhances AI responses by connecting your AI agents with external knowledge sources. This allows your AI to provide more accurate and contextual responses based on your specific data and documents."
+      },
+      {
+        "question": "Is KAI Flow suitable for enterprises?",
+        "answer": "Absolutely! KAI Flow is designed to scale from individual developers to large enterprises. It offers robust security features, team collaboration tools, and enterprise-grade support options."
+      },
+      {
+        "question": "How can I contribute to KAI Flow?",
+        "answer": "KAI Flow is open source! You can contribute by visiting our GitHub repository, submitting pull requests, reporting issues, or joining our community on Discord to discuss features and improvements."
+      }
+    ]
+  },
+  "contributors": {
+    "heading": "Let's Build Together!",
+    "description": "Meet the amazing people who make KAI Flow possible.",
+    "loading": "Loading...",
+    "recentStargazers": "Recent Stargazers",
+    "stargazersDescription": "Thanks to everyone who starred the project",
+    "starOnGithub": "Star on GitHub",
+    "stars": "Stars",
+    "stargazers": "Stargazers",
+    "starred": "Starred"
+  },
+  "footer": {
+    "copyright": "© {year} Kafein, All rights reserved",
+    "poweredBy": "Powered by"
+  }
+}

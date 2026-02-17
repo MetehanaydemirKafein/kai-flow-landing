@@ -43,7 +43,7 @@ export const HeroGallery = ({ className }: HeroGalleryProps) => {
           alt="KAI Flow demo"
           width={800}
           height={450}
-          className="rounded-lg shadow-lg shadow-white/20 max-w-full max-h-[40vh] w-auto pointer-events-none border border-white/10 object-contain"
+          className="rounded-lg shadow-lg shadow-white/20 max-w-full max-h-[30vh] sm:max-h-[35vh] md:max-h-[40vh] w-auto pointer-events-none border border-white/10 object-contain"
           unoptimized
         />
       </div>
@@ -62,12 +62,12 @@ export const HeroGallery = ({ className }: HeroGalleryProps) => {
     >
       <div className="relative overflow-hidden w-full max-w-4xl mx-auto rounded-lg border border-white/10 shadow-lg shadow-white/20">
         {/* Fade edges */}
-        <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-16 z-10 bg-gradient-to-r from-black/80 to-transparent" />
-        <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-16 z-10 bg-gradient-to-l from-black/80 to-transparent" />
+        <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-8 sm:w-16 z-10 bg-gradient-to-r from-black/80 to-transparent" />
+        <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-8 sm:w-16 z-10 bg-gradient-to-l from-black/80 to-transparent" />
 
         <div
           ref={scrollRef}
-          className="flex gap-6 py-4 px-4"
+          className="flex gap-3 sm:gap-6 py-2 sm:py-4 px-2 sm:px-4"
           style={{
             animation: `marquee ${images.length * 5}s linear infinite`,
             animationPlayState: paused ? "paused" : "running",
@@ -80,7 +80,7 @@ export const HeroGallery = ({ className }: HeroGalleryProps) => {
                 alt={`KAI Flow demo ${(i % images.length) + 1}`}
                 width={600}
                 height={340}
-                className="rounded-md max-h-[35vh] w-auto object-contain"
+                className="rounded-md max-h-[25vh] sm:max-h-[30vh] md:max-h-[35vh] w-auto object-contain"
                 unoptimized
               />
             </div>

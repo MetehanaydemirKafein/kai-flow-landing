@@ -1,6 +1,9 @@
-import type { Metadata } from "next";
+import { NextIntlClientProvider, hasLocale } from "next-intl";
+import { getMessages } from "next-intl/server";
+import { notFound } from "next/navigation";
+import { routing } from "@/i18n/routing";
 import Footer from "@/components/footer";
-import "./globals.css";
+import "../globals.css";
 import { HeroHeader } from "@/components/header";
 
 export const metadata = {
@@ -34,25 +37,37 @@ export const metadata = {
     type: "website",
   },
   twitter: {
-    card: "summary_large_image",
+    card: "summary_large_image" as const,
     title: "Kai Flow - Visual Workflow Builder",
     description:
       "Drag-and-drop automation platform to streamline your tasks and services.",
-    creator: "@kami_0w",
+    creator: "@kafein",
   },
 };
 
-export default function RootLayout({
+export default async function LocaleLayout({
   children,
-}: Readonly<{
+  params,
+}: {
   children: React.ReactNode;
-}>) {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+
+  if (!hasLocale(routing.locales, locale)) {
+    notFound();
+  }
+
+  const messages = await getMessages();
+
   return (
-    <html lang="en">
+    <html lang={locale}>
       <body>
-        <HeroHeader />
-        {children}
-        <Footer />
+        <NextIntlClientProvider messages={messages}>
+          <HeroHeader />
+          {children}
+          <Footer />
+        </NextIntlClientProvider>
       </body>
     </html>
   );
