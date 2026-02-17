@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const members = [
   {
     name: "Baha Kızıl",
@@ -40,14 +42,13 @@ export default function TeamSection() {
               .filter((member) => member.position === "Leadership")
               .map((member, index) => (
                 <div key={index}>
-                  <div className="bg-white/5 size-20 rounded-full border border-white/20 p-0.5 shadow shadow-white/5">
-                    <img
-                      className="aspect-square rounded-full object-cover"
+                  <div className="bg-white/5 size-20 rounded-full border border-white/20 p-0.5 shadow shadow-white/5 relative overflow-hidden">
+                    <Image
+                      className="rounded-full object-cover"
                       src={member.avatar}
                       alt={member.name}
-                      height="460"
-                      width="460"
-                      loading="lazy"
+                      fill
+                      sizes="80px"
                     />
                   </div>
                   <span className="mt-2 block text-sm text-white">
@@ -71,14 +72,13 @@ export default function TeamSection() {
               .filter((member) => member.position === "Engineer")
               .map((member, index) => (
                 <div key={index}>
-                  <div className="bg-white/5 size-20 rounded-full border border-white/20 p-0.5 shadow shadow-white/5">
-                    <img
-                      className="aspect-square rounded-full object-cover"
+                  <div className="bg-white/5 size-20 rounded-full border border-white/20 p-0.5 shadow shadow-white/5 relative overflow-hidden">
+                    <Image
+                      className="rounded-full object-cover"
                       src={member.avatar}
                       alt={member.name}
-                      height="460"
-                      width="460"
-                      loading="lazy"
+                      fill
+                      sizes="80px"
                     />
                   </div>
                   <span className="mt-2 block text-sm text-white">

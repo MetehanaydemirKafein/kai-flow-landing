@@ -1,18 +1,29 @@
+"use client";
 import Link from "next/link";
 import Image from "next/image";
-
-const links = [
-  { title: "Features", href: "#features" },
-  { title: "Integrations", href: "#integrations" },
-  { title: "Content", href: "#content" },
-  { title: "Community", href: "#team" },
-  { title: "Contributors", href: "#contributors" },
-];
+import { useTranslations } from "next-intl";
 
 export default function FooterSection() {
+  const t = useTranslations();
+
+  const links = [
+    { title: t("header.features"), href: "#features" },
+    { title: t("header.integrations"), href: "#integrations" },
+    { title: t("header.content"), href: "#content" },
+    { title: t("header.faq"), href: "#faq" },
+    { title: t("header.contributors"), href: "#contributors" },
+  ];
+
   return (
-    <footer className="py-16 md:py-32 bg-black">
-      <div className="mx-auto max-w-5xl px-6">
+    <footer className="py-12 sm:py-16 md:py-20 bg-black overflow-hidden relative">
+      {/* Corner vignette shadows */}
+      <div className="pointer-events-none absolute inset-0 z-0">
+        <div className="absolute top-0 left-0 w-1/2 h-1/2 bg-[radial-gradient(ellipse_at_top_left,rgba(0,0,0,0.8)_0%,transparent_70%)]" />
+        <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-[radial-gradient(ellipse_at_top_right,rgba(0,0,0,0.8)_0%,transparent_70%)]" />
+        <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-[radial-gradient(ellipse_at_bottom_left,rgba(0,0,0,0.8)_0%,transparent_70%)]" />
+        <div className="absolute bottom-0 right-0 w-1/2 h-1/2 bg-[radial-gradient(ellipse_at_bottom_right,rgba(0,0,0,0.8)_0%,transparent_70%)]" />
+      </div>
+      <div className="mx-auto max-w-5xl px-4 sm:px-6 relative z-10">
         <Link href="/" aria-label="go home" className="mx-auto block size-fit">
           <Image
             src="/logo.png"
@@ -23,20 +34,20 @@ export default function FooterSection() {
           />
         </Link>
 
-        <div className="my-8 flex flex-wrap justify-center gap-6 text-sm">
+        <div className="my-8 flex flex-wrap justify-center gap-4 sm:gap-6 text-sm">
           {links.map((link, index) => (
             <Link
               key={index}
               href={link.href}
-              className="text-white/70 hover:text-white block duration-150"
+              className="text-white hover:text-white/80 block duration-150"
             >
               <span>{link.title}</span>
             </Link>
           ))}
         </div>
-        <div className="my-8 flex flex-wrap justify-center gap-6 text-sm">
+        <div className="my-8 flex flex-wrap justify-center gap-4 sm:gap-6 text-sm">
           <Link
-            href="#"
+            href="https://x.com/kafein"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="X/Twitter"
@@ -56,7 +67,7 @@ export default function FooterSection() {
             </svg>
           </Link>
           <Link
-            href="#"
+            href="https://www.linkedin.com/company/kafein"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
@@ -76,7 +87,7 @@ export default function FooterSection() {
             </svg>
           </Link>
           <Link
-            href="#"
+            href="https://www.facebook.com/kafein"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Facebook"
@@ -95,9 +106,8 @@ export default function FooterSection() {
               ></path>
             </svg>
           </Link>
-
           <Link
-            href="#"
+            href="https://www.instagram.com/kafein"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram"
@@ -117,7 +127,7 @@ export default function FooterSection() {
             </svg>
           </Link>
           <Link
-            href="#"
+            href="https://www.tiktok.com/@kafein"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="TikTok"
@@ -137,10 +147,28 @@ export default function FooterSection() {
             </svg>
           </Link>
         </div>
-        <span className="text-white/70 block text-center text-sm">
-          {" "}
-          © {new Date().getFullYear()} Kafein, All rights reserved
-        </span>
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mt-8">
+          <span className="text-white text-sm">
+            {t("footer.copyright", { year: new Date().getFullYear() })}
+          </span>
+          <div className="flex items-center gap-2 text-white/50 text-xs bg-white/5 border-2 border-white rounded-md px-3 py-2">
+            <span>{t("footer.poweredBy")}</span>
+            <Link
+              href="https://kafein.com.tr"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:opacity-80 transition-opacity"
+            >
+              <Image
+                src="/kafein.svg"
+                alt="Kafein"
+                width={100}
+                height={25}
+                className="h-5 w-auto"
+              />
+            </Link>
+          </div>
+        </div>
       </div>
     </footer>
   );

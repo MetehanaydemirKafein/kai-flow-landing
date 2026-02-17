@@ -1,0 +1,123 @@
+{
+  "header": {
+    "features": "Özellikler",
+    "integrations": "Entegrasyonlar",
+    "content": "İçerik",
+    "faq": "SSS",
+    "contributors": "Katkıda Bulunanlar",
+    "bookDemo": "Demo Talep Et",
+    "comingSoon": "Yakında",
+    "starOnGithub": "GitHub'da Yıldız Ver"
+  },
+  "hero": {
+    "title": "KAI Flow",
+    "subtitle": "Yeni Nesil Yapay Zeka İş Akışı Otomasyonu",
+    "description": "İşletmenizi; karmaşık iş akışlarını otomatikleştiren, her türlü API ile sorunsuz entegre olan ve zorlu operasyonel görevleri 7/24 otonom şekilde çözen akıllı yapay zeka ajanlarıyla dönüştürün.",
+    "github": "GitHub",
+    "bookDemo": "Demo Talep Et",
+    "comingSoon": "Yakında"
+  },
+  "features": {
+    "badge": "KAI Flow Özellikleri",
+    "heading": "Akıllı Yapay Zeka İş Akışı Otomasyon Platformu",
+    "description": "Güçlü otomasyon yetenekleriyle yapay zeka ajanları oluşturun, dağıtın ve yönetin.",
+    "tabs": {
+      "chat": {
+        "label": "Sohbet",
+        "badge": "Yapay Zeka İletişimi",
+        "title": "Yapay zeka ajanlarınızla doğal dilde etkileşim.",
+        "description": "Doğal dil işleme ile bağlamı anlayan ve anlamlı yanıtlar veren akıllı sohbet ajanları oluşturun.",
+        "button": "Sohbeti Deneyin"
+      },
+      "export": {
+        "label": "Dışa Aktar",
+        "badge": "Veri Dışa Aktarımı",
+        "title": "Verilerinizi birden fazla formatta dışa aktarın.",
+        "description": "İş akışı verilerinizi, sonuçları ve yapılandırmaları JSON, CSV ve XML gibi formatlarda kolayca dışa aktarın. Verileriniz üzerinde tam kontrol sahibi olun.",
+        "button": "Veriyi Dışa Aktar"
+      },
+      "rag": {
+        "label": "RAG",
+        "badge": "Bilgi Destekli",
+        "title": "Yapay zekayı bilgi tabanınızla güçlendirin.",
+        "description": "Bilgi Destekli Üretim (RAG) ile yapay zeka ajanlarınızı harici veri kaynaklarına bağlayın; daha doğru ve bağlamsal yanıtlar elde edin.",
+        "button": "RAG Kurun"
+      },
+      "lowCode": {
+        "label": "Düşük Kod",
+        "badge": "Görsel Oluşturucu",
+        "title": "Kod yazmadan iş akışları oluşturun.",
+        "description": "Sezgisel sürükle-bırak arayüzüyle karmaşık yapay zeka iş akışları tasarlayın. Kod gerekmez — düğümleri bağlayın ve otomasyonunuzu dağıtın.",
+        "button": "Oluşturmaya Başlayın"
+      }
+    }
+  },
+  "integrations": {
+    "ecosystem": "Ekosistem",
+    "heading": "Tüm teknoloji yığınınızda",
+    "headingHighlight": "iş akışlarını güçlendiren",
+    "description": "LLM'lerden veritabanlarına, mesajlaşmadan analitiğe — yapay zekanızın ihtiyaç duyduğu her şeyi bağlayın.",
+    "aiIntegrations": "Yapay Zeka Entegrasyonları",
+    "businessCases": "İş Kullanım Senaryoları",
+    "setupTime": "Kurulum Süresi",
+    "setupTimeValue": "5 dk",
+    "exploreAll": "Tüm entegrasyonları keşfedin",
+    "noCreditCard": "Başlamak için kredi kartı gerekmez"
+  },
+  "content": {
+    "heading": "Otomasyonun ötesinde — eksiksiz bir görsel backend platformu",
+    "description1": "Platformumuz sadece sürükle-bırak iş akışlarından ibaret değil.",
+    "descriptionHighlight": "Tam yığın bir otomasyon ekosistemi",
+    "description2": "— API'leri, veritabanlarını, iş mantığını ve LLM'leri birbirine bağlar.",
+    "description3": "İster görevleri otomatikleştirin, ister dahili araçlar oluşturun, ister ürününüzün backend'ini güçlendirin — platform fikirlerinizle birlikte ölçeklenir.",
+    "realtimeTriggers": "Gerçek Zamanlı Tetikleyiciler",
+    "realtimeTriggersDesc": "Webhook'lar, cron görevleri veya harici API'lerden gelen olaylara anında yanıt verin.",
+    "modularLogic": "Modüler Mantık",
+    "modularLogicDesc": "Koşullar, döngüler ve özel fonksiyonlarla bağımsız, karmaşık akışlar oluşturun."
+  },
+  "faq": {
+    "heading": "Sıkça Sorulan Sorular",
+    "description": "KAI Flow hakkında bilmeniz gerekenler",
+    "items": [
+      {
+        "question": "KAI Flow nedir?",
+        "answer": "KAI Flow, güçlü otomasyon yetenekleriyle yapay zeka ajanları oluşturmanızı, dağıtmanızı ve yönetmenizi sağlayan akıllı bir iş akışı otomasyon platformudur. Birçok API ile sorunsuz entegre olur ve karmaşık operasyonel görevleri otonom şekilde yerine getirir."
+      },
+      {
+        "question": "KAI Flow diğer araçlarla nasıl entegre olur?",
+        "answer": "KAI Flow, OpenAI, Claude, Gemini, Replit ve daha fazlasıyla entegrasyonu destekler. Mevcut araçlarınızı API'mizle kolayca bağlayabilir veya hazır entegrasyonlarımızı kullanabilirsiniz."
+      },
+      {
+        "question": "KAI Flow'u kullanmak için kodlama bilgisi gerekiyor mu?",
+        "answer": "Hayır. KAI Flow, sezgisel sürükle-bırak arayüzüyle kod yazmadan karmaşık iş akışları oluşturmanızı sağlayan düşük kodlu bir görsel oluşturucu sunar. Geliştiriciler ise gelişmiş özelleştirmeler için API'mizi kullanabilir."
+      },
+      {
+        "question": "RAG (Bilgi Destekli Üretim) nedir?",
+        "answer": "RAG, yapay zeka ajanlarınızı harici bilgi kaynaklarına bağlayarak yanıtların doğruluğunu ve bağlamsallığını artıran bir tekniktir. Bu sayede model, sizin verileriniz ve dokümanlarınız temelinde daha isabetli cevaplar verir."
+      },
+      {
+        "question": "KAI Flow kurumsal kullanıma uygun mu?",
+        "answer": "Kesinlikle. KAI Flow, bireysel geliştiricilerden büyük kurumsal yapılara kadar ölçeklenecek şekilde tasarlanmıştır. Güçlü güvenlik, ekip iş birliği araçları ve kurumsal destek seçenekleri sunar."
+      },
+      {
+        "question": "KAI Flow'a nasıl katkıda bulunabilirim?",
+        "answer": "KAI Flow açık kaynaklıdır. GitHub deposunu ziyaret edip pull request gönderebilir, sorunlar raporlayabilir veya geliştirme ve iyileştirmeler için topluluğumuza katılabilirsiniz."
+      }
+    ]
+  },
+  "contributors": {
+    "heading": "Birlikte İnşa Edelim!",
+    "description": "KAI Flow'u mümkün kılan harika insanlarla tanışın.",
+    "loading": "Yükleniyor...",
+    "recentStargazers": "Son Yıldız Verenler",
+    "stargazersDescription": "Projeyi yıldızlayan herkese teşekkürler!",
+    "starOnGithub": "GitHub'da Yıldız Ver",
+    "stars": "Yıldız",
+    "stargazers": "Yıldızlayanlar",
+    "starred": "Yıldızlandı"
+  },
+  "footer": {
+    "copyright": "© {year} Kafein. Tüm hakları saklıdır",
+    "poweredBy": "Geliştirildi"
+  }
+}
