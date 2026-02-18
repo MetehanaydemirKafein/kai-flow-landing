@@ -86,7 +86,7 @@ export default function Home() {
 
   return (
     <div className="overflow-x-hidden">
-      <WavyBackground className="max-w-6xl mx-auto pb-6 pt-4 px-4">
+      <WavyBackground containerClassName="pt-20 lg:pt-24" className="max-w-6xl mx-auto pb-8 pt-2 px-4">
         <div className="flex flex-col items-center">
           <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-7xl text-white font-extrabold inter-var text-center bg-gradient-to-r from-white via-gray-100 to-gray-300 bg-clip-text text-transparent leading-tight">
             {t("hero.title")}
