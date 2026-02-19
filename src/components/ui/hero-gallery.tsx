@@ -43,7 +43,7 @@ export const HeroGallery = ({ className }: HeroGalleryProps) => {
           alt="KAI Flow demo"
           width={800}
           height={450}
-          className="rounded-lg shadow-lg shadow-white/20 max-w-full max-h-[30vh] sm:max-h-[35vh] md:max-h-[40vh] w-auto pointer-events-none border border-white/10 object-contain"
+          className="rounded-lg shadow-lg shadow-white/20 max-w-full max-h-[25vh] sm:max-h-[28vh] md:max-h-[33vh] w-auto pointer-events-none border border-white/10 object-contain"
           unoptimized
         />
       </div>
@@ -80,7 +80,7 @@ export const HeroGallery = ({ className }: HeroGalleryProps) => {
                 alt={`KAI Flow demo ${(i % images.length) + 1}`}
                 width={600}
                 height={340}
-                className="rounded-md max-h-[25vh] sm:max-h-[30vh] md:max-h-[35vh] w-auto object-contain"
+                className="rounded-md max-h-[20vh] sm:max-h-[24vh] md:max-h-[28vh] w-auto object-contain"
                 unoptimized
               />
             </div>
