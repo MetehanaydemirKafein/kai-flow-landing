@@ -11,8 +11,8 @@
   },
   "hero": {
     "title": "KAI Flow",
-    "subtitle": "Yeni Nesil Yapay Zeka İş Akışı Otomasyonu",
-    "description": "İşletmenizi; karmaşık iş akışlarını otomatikleştiren, her türlü API ile sorunsuz entegre olan ve zorlu operasyonel görevleri 7/24 otonom şekilde çözen akıllı yapay zeka ajanlarıyla dönüştürün.",
+    "subtitle": "Yapay Zeka Ajanlarını ve Dinamik İş Akışlarını Görsel Olarak Orkestre Edin",
+    "description": "KAI Flow, karmaşık yapay zeka iş akışlarını tasarlamak ve ölçeklendirmek için geliştirilmiş düşük kodlu bir platformdur. RAG pipeline'larını, hafıza yönetimini ve araç çağrılarını görsel bir arayüzde birleştirerek; gereksiz kod yazmadan akıllı asistanlar ve otomatize veri pipeline'ları inşa edin",
     "github": "GitHub",
     "bookDemo": "Demo Talep Et",
     "comingSoon": "Yakında"
@@ -25,55 +25,54 @@
       "chat": {
         "label": "Sohbet",
         "badge": "Yapay Zeka İletişimi",
-        "title": "Yapay zeka ajanlarınızla doğal dilde etkileşim.",
-        "description": "Doğal dil işleme ile bağlamı anlayan ve anlamlı yanıtlar veren akıllı sohbet ajanları oluşturun.",
+        "title": "Akıllı Diyalog Ajanları ve Sohbet Arayüzleri",
+        "description": "Kanvas üzerinde LLM node'larını, hafızayı ve araç çağrılarını bağlayarak chatbot'lar ve asistanlar oluşturun. Gömülebilir widget veya API endpoint olarak yayına alın.",
         "button": "Sohbeti Deneyin"
       },
       "export": {
         "label": "Dışa Aktar",
-        "badge": "Veri Dışa Aktarımı",
-        "title": "Verilerinizi birden fazla formatta dışa aktarın.",
-        "description": "İş akışı verilerinizi, sonuçları ve yapılandırmaları JSON, CSV ve XML gibi formatlarda kolayca dışa aktarın. Verileriniz üzerinde tam kontrol sahibi olun.",
-        "button": "Veriyi Dışa Aktar"
+        "badge": "İş Akışı Dışa Aktarımı",
+        "title": "Agent konfigürasyonlarını paylaşın ve yeniden kullanın.",
+        "description": "Karmaşık ajan grafiklerinizi taşınabilir JSON formatında dışa aktarın. İş akışlarınızı takımlar arasında paylaşın veya farklı projeler arasında kolayca taşıyın. Ajanlarınız, tüm konfigürasyon ve çalışma mantıklarıyla birlikte her yere sizinle gelir.",
+        "button": "Konfigürasyonu Dışa Aktar"
       },
       "rag": {
         "label": "RAG",
         "badge": "Bilgi Destekli",
-        "title": "Yapay zekayı bilgi tabanınızla güçlendirin.",
-        "description": "Bilgi Destekli Üretim (RAG) ile yapay zeka ajanlarınızı harici veri kaynaklarına bağlayın; daha doğru ve bağlamsal yanıtlar elde edin.",
+        "title": "Özel Verilerle Desteklenen Semantik Bilgi Yönetimi",
+        "description": "PostgreSQL ve pgvector tabanlı yerleşik vektör veritabanı desteğiyle agent'larınıza kendi dökümanlarınızı (PDF, Web, Metin) öğretin. Entegre document loader ve splitter bileşenleriyle, saniyeler içinde teknik bilgi tabanı oluşturun ve sorgulayın.",
         "button": "RAG Kurun"
       },
       "lowCode": {
         "label": "Düşük Kod",
         "badge": "Görsel Oluşturucu",
-        "title": "Kod yazmadan iş akışları oluşturun.",
-        "description": "Sezgisel sürükle-bırak arayüzüyle karmaşık yapay zeka iş akışları tasarlayın. Kod gerekmez — düğümleri bağlayın ve otomasyonunuzu dağıtın.",
+        "title": "Görsel Kanvas Üzerinde AI Orkestrasyonu",
+        "description": "Karmaşık LLM zincirlerini, mantıksal dallanmaları ve döngüsel süreçleri sürükle-bırak yöntemiyle tasarlayın. İleri düzey senaryolar için özel Python, JavaScript kod blokları ekleyerek esnekliğinizi koruyun.",
         "button": "Oluşturmaya Başlayın"
       }
     }
   },
   "integrations": {
     "ecosystem": "Ekosistem",
-    "heading": "Tüm teknoloji yığınınızda",
-    "headingHighlight": "iş akışlarını güçlendiren",
-    "description": "LLM'lerden veritabanlarına, mesajlaşmadan analitiğe — yapay zekanızın ihtiyaç duyduğu her şeyi bağlayın.",
-    "aiIntegrations": "Yapay Zeka Entegrasyonları",
-    "businessCases": "İş Kullanım Senaryoları",
-    "setupTime": "Kurulum Süresi",
-    "setupTimeValue": "5 dk",
-    "exploreAll": "Tüm entegrasyonları keşfedin",
-    "noCreditCard": "Başlamak için kredi kartı gerekmez"
+    "heading": "Yapay zekayı kendi iş akışlarınıza",
+    "headingHighlight": "entegre edin.",
+    "description": "Yapay zekayı işletmenizde gerçekten işler hale getirmenin hızlı yolu",
+    "aiIntegrations": "Node Tipi",
+    "businessCases": "Çoklu LLM Desteği",
+    "setupTime": "Dağıtım",
+    "setupTimeValue": "Docker Hazır",
+    "exploreAll": "Tüm entegrasyonları keşfedin"
   },
   "content": {
-    "heading": "Otomasyonun ötesinde — eksiksiz bir görsel backend platformu",
-    "description1": "Platformumuz sadece sürükle-bırak iş akışlarından ibaret değil.",
-    "descriptionHighlight": "Tam yığın bir otomasyon ekosistemi",
-    "description2": "— API'leri, veritabanlarını, iş mantığını ve LLM'leri birbirine bağlar.",
-    "description3": "İster görevleri otomatikleştirin, ister dahili araçlar oluşturun, ister ürününüzün backend'ini güçlendirin — platform fikirlerinizle birlikte ölçeklenir.",
-    "realtimeTriggers": "Gerçek Zamanlı Tetikleyiciler",
-    "realtimeTriggersDesc": "Webhook'lar, cron görevleri veya harici API'lerden gelen olaylara anında yanıt verin.",
-    "modularLogic": "Modüler Mantık",
-    "modularLogicDesc": "Koşullar, döngüler ve özel fonksiyonlarla bağımsız, karmaşık akışlar oluşturun."
+    "heading": "Görsel Tasarımın Ötesinde: Kurumsal AI Orkestrasyonu Runtime Sistemi",
+    "description1": "KAI Flow sadece bir görsel tasarım aracı değil,",
+    "descriptionHighlight": "AI ajanlarınızı en yüksek performansla yürüten gelişmiş bir runtime altyapısıdır.",
+    "description2": "Zamanlayıcılar, olay bazlı tetikleyiciler, hibrit RAG süreçleri ve çok adımlı muhakeme yetenekleri sistemin merkezinde yer alır.",
+    "description3": "Dahili operasyon araçları, otonom müşteri asistanları veya veri pipeline'larını aynı ortak kanvas üzerinde inşa edin ve orkestre edin.",
+    "realtimeTriggers": "Reaktif ve Olay Güdümlü Altyapı",
+    "realtimeTriggersDesc": "Kafka topic'leri, Webhook'lar veya akıllı zamanlayıcılar ile iş akışlarını otomatikleştirin. Ajanlarınız, dış dünyadaki olaylara gerçek zamanlı ve otonom tepkiler versin.",
+    "modularLogic": "LangGraph ile Durum Yönetimli (Stateful) Yürütme",
+    "modularLogicDesc": "Grafikteki her bir düğüm, LangGraph düğümlerine doğrudan eşlenir. Karmaşık döngüler, dinamik dallanmalar ve durum geçişleri üzerinde mutlak kontrole sahip olun."
   },
   "faq": {
     "heading": "Sıkça Sorulan Sorular",
@@ -81,27 +80,27 @@
     "items": [
       {
         "question": "KAI Flow nedir?",
-        "answer": "KAI Flow, güçlü otomasyon yetenekleriyle yapay zeka ajanları oluşturmanızı, dağıtmanızı ve yönetmenizi sağlayan akıllı bir iş akışı otomasyon platformudur. Birçok API ile sorunsuz entegre olur ve karmaşık operasyonel görevleri otonom şekilde yerine getirir."
+        "answer": "KAI Flow, LangChain ve LangGraph ekosistemleri üzerine inşa edilmiş, açık kaynaklı ve kurumsal düzeyde bir AI agent orkestrasyon platformudur. Görsel bir kanvas üzerinde LLM düğümlerini, hafıza bileşenlerini ve gelişmiş tetikleyicileri (Kafka, Webhook vb.) birleştirerek, karmaşık mantıksal akışlara sahip otonom asistanları kod yazmadan (veya özel kod ekleyerek) production ortamına taşımanıza olanak tanır."
       },
       {
-        "question": "KAI Flow diğer araçlarla nasıl entegre olur?",
-        "answer": "KAI Flow, OpenAI, Claude, Gemini, Replit ve daha fazlasıyla entegrasyonu destekler. Mevcut araçlarınızı API'mizle kolayca bağlayabilir veya hazır entegrasyonlarımızı kullanabilirsiniz."
+        "question": "KAI Flow hangi LLM sağlayıcılarını destekliyor?",
+        "answer": "KAI Flow; OpenAI, Anthropic (Claude), Google Gemini, Mistral, HuggingFace ve yerel modeller dahil olmak üzere sektördeki tüm öncü LLM sağlayıcılarını destekler. Modeller doğrudan görsel arayüzden yapılandırılabilir; her adımda farklı modelleri orkestre ederek hibrit akışlar oluşturabilirsiniz."
       },
       {
         "question": "KAI Flow'u kullanmak için kodlama bilgisi gerekiyor mu?",
-        "answer": "Hayır. KAI Flow, sezgisel sürükle-bırak arayüzüyle kod yazmadan karmaşık iş akışları oluşturmanızı sağlayan düşük kodlu bir görsel oluşturucu sunar. Geliştiriciler ise gelişmiş özelleştirmeler için API'mizi kullanabilir."
+        "answer": "Hayır. Platformun 'low-code' felsefesi sayesinde, karmaşık iş akışlarını sürükle-bırak yöntemiyle saniyeler içinde tasarlayabilirsiniz. Ancak, ileri düzey kullanıcılar için özel Python mantığı (Custom Nodes) ekleme yeteneği de sunularak tam esneklik ve ölçeklenebilirlik sağlanır."
       },
       {
-        "question": "RAG (Bilgi Destekli Üretim) nedir?",
-        "answer": "RAG, yapay zeka ajanlarınızı harici bilgi kaynaklarına bağlayarak yanıtların doğruluğunu ve bağlamsallığını artıran bir tekniktir. Bu sayede model, sizin verileriniz ve dokümanlarınız temelinde daha isabetli cevaplar verir."
+        "question": "KAI Flow'da RAG nasıl çalışır?",
+        "answer": "KAI Flow, PostgreSQL ve pgvector eklentisini kullanarak yerleşik vektör veritabanı desteği sunar. PDF, Web ve metin dökümanlarını yükleyip parçalara ayıran, ardından agent'ın bu verileri sorgulamasını sağlayan eksiksiz RAG hattını (pipeline) görsel kanvas üzerinden hiçbir ek altyapı kurulumuna ihtiyaç duymadan yapılandırabilirsiniz."
       },
       {
-        "question": "KAI Flow kurumsal kullanıma uygun mu?",
-        "answer": "Kesinlikle. KAI Flow, bireysel geliştiricilerden büyük kurumsal yapılara kadar ölçeklenecek şekilde tasarlanmıştır. Güçlü güvenlik, ekip iş birliği araçları ve kurumsal destek seçenekleri sunar."
+        "question": "Dağıttığım agent'lara nasıl erişirim?",
+        "answer": "Her agent iş akışına, FastAPI backend'i üzerinden REST endpoint olarak erişilebilir. Ayrıca @kaiFlow/widget npm paketi ile web sitenize gömülebilir bir sohbet widget'ı olarak da yayınlayabilirsiniz."
       },
       {
         "question": "KAI Flow'a nasıl katkıda bulunabilirim?",
-        "answer": "KAI Flow açık kaynaklıdır. GitHub deposunu ziyaret edip pull request gönderebilir, sorunlar raporlayabilir veya geliştirme ve iyileştirmeler için topluluğumuza katılabilirsiniz."
+        "answer": "KAI Flow açık kaynaklıdır. GitHub deposunu ziyaret ederek issue açabilir, pull request gönderebilir veya yeni node tipleri geliştirebilirsiniz. Katkı rehberi için CONTRIBUTING.md dosyasını inceleyebilirsiniz."
       }
     ]
   },
@@ -118,6 +117,6 @@
   },
   "footer": {
     "copyright": "© {year} Kafein. Tüm hakları saklıdır",
-    "poweredBy": "Geliştirildi"
+    "poweredBy": "Powered by"
   }
 }

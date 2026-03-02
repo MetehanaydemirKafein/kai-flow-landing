@@ -33,6 +33,7 @@ const brandNames: Record<string, string> = {
   "tavily-nonbrand": "Tavily",
   "javascript": "JavaScript",
   "python": "Python",
+  "kafka": "Kafka",
   "json": "JSON",
   "csv": "CSV",
   "xml": "XML",
