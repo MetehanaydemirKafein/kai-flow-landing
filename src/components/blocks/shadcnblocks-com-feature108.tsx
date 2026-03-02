@@ -1,8 +1,12 @@
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@radix-ui/react-tabs";
+"use client";
+
+import { useState } from "react";
+import { Tabs, TabsList, TabsTrigger } from "@radix-ui/react-tabs";
 import { Layout, Pointer, Zap } from "lucide-react";
+import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
 
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 
 interface TabContent {
   badge: string;
@@ -79,55 +83,79 @@ const Feature108 = ({
     },
   ],
 }: Feature108Props) => {
+  const [activeTab, setActiveTab] = useState(tabs[0].value);
+  const activeContent = tabs.find((t) => t.value === activeTab)?.content;
+
   return (
-    <section className="py-32 bg-black">
-      <div className="container mx-auto">
+    <section id="features" className="relative min-h-screen py-16 md:py-20 bg-black flex items-center overflow-hidden scroll-mt-16">
+      {/* Corner vignette shadows */}
+      <div className="pointer-events-none absolute inset-0 z-0">
+        <div className="absolute top-0 left-0 w-1/2 h-1/2 bg-[radial-gradient(ellipse_at_top_left,rgba(0,0,0,0.8)_0%,transparent_70%)]" />
+        <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-[radial-gradient(ellipse_at_top_right,rgba(0,0,0,0.8)_0%,transparent_70%)]" />
+        <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-[radial-gradient(ellipse_at_bottom_left,rgba(0,0,0,0.8)_0%,transparent_70%)]" />
+        <div className="absolute bottom-0 right-0 w-1/2 h-1/2 bg-[radial-gradient(ellipse_at_bottom_right,rgba(0,0,0,0.8)_0%,transparent_70%)]" />
+      </div>
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <div className="flex flex-col items-center gap-4 text-center">
           <h1 className="max-w-2xl text-3xl font-semibold md:text-4xl text-white">
             {heading}
           </h1>
           <p className="text-white/70">{description}</p>
         </div>
-        <Tabs defaultValue={tabs[0].value} className="mt-8">
-          <TabsList className="container flex flex-col items-center justify-center gap-4 sm:flex-row md:gap-10 bg-transparent border-none">
+        <Tabs value={activeTab} onValueChange={setActiveTab} className="mt-8">
+          <TabsList className="flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4 md:gap-10 bg-transparent border-none">
             {tabs.map((tab) => (
               <TabsTrigger
                 key={tab.value}
                 value={tab.value}
-                className="flex items-center gap-2 rounded-xl px-4 py-3 text-sm font-semibold text-white/70 hover:text-white data-[state=active]:bg-white/10 data-[state=active]:text-white border border-white/20"
+                className="flex items-center gap-2 rounded-xl px-3 py-2 sm:px-4 sm:py-3 text-xs sm:text-sm font-semibold text-white/70 hover:text-white data-[state=active]:bg-white/10 data-[state=active]:text-white border-2 border-white/30 data-[state=active]:border-purple-400/60 transition-all duration-300"
               >
                 {tab.icon} {tab.label}
               </TabsTrigger>
             ))}
           </TabsList>
-          <div className="mx-auto mt-8 max-w-screen-xl rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 p-6 lg:p-16">
-            {tabs.map((tab) => (
-              <TabsContent
-                key={tab.value}
-                value={tab.value}
-                className="grid place-items-center gap-20 lg:grid-cols-2 lg:gap-10"
-              >
-                <div className="flex flex-col gap-5">
-                  <Badge
-                    variant="outline"
-                    className="w-fit border-white/20 bg-white/10 text-white"
-                  >
-                    {tab.content.badge}
-                  </Badge>
-                  <h3 className="text-3xl font-semibold lg:text-5xl text-white">
-                    {tab.content.title}
-                  </h3>
-                  <p className="text-white/80 lg:text-lg">
-                    {tab.content.description}
-                  </p>
-                </div>
-                <img
-                  src={tab.content.imageSrc}
-                  alt={tab.content.imageAlt}
-                  className="rounded-xl border border-white/10"
-                />
-              </TabsContent>
-            ))}
+          <div className="mx-auto mt-8 max-w-screen-xl rounded-3xl p-[3px] bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 overflow-hidden">
+          <div className="rounded-[calc(1.5rem-3px)] bg-black/95 p-8 pb-16 sm:p-10 sm:pb-20 md:p-12 md:pb-24 lg:p-16 lg:pb-28 overflow-hidden h-[400px] sm:h-[450px] lg:h-[500px] flex items-center justify-center">
+            <AnimatePresence mode="wait">
+              {activeContent && (
+                <motion.div
+                  key={activeTab}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+                  className="grid place-items-center gap-6 sm:gap-10 lg:grid-cols-2 lg:gap-8 h-full w-full"
+                >
+                  <div className="flex flex-col gap-5">
+                    <Badge
+                      variant="outline"
+                      className="w-fit border-2 border-white bg-white/10 text-white"
+                    >
+                      {activeContent.badge}
+                    </Badge>
+                    <h3 className="text-xl sm:text-2xl font-semibold lg:text-4xl text-white">
+                      {activeContent.title}
+                    </h3>
+                    <p className="text-white/80 lg:text-lg">
+                      {activeContent.description}
+                    </p>
+                  </div>
+                  <div className="rounded-2xl p-[3px] bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 w-full sm:w-auto">
+                    <div className="rounded-[calc(1rem-3px)] bg-black/95 w-full sm:w-auto overflow-hidden">
+                      <Image
+                        src={activeContent.imageSrc}
+                        alt={activeContent.imageAlt}
+                        width={800}
+                        height={600}
+                        className="rounded-[calc(1rem-3px)] max-h-[30vh] sm:max-h-[35vh] lg:max-h-[40vh] w-full sm:w-auto object-contain"
+                        priority={false}
+                      />
+                    </div>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
           </div>
         </Tabs>
       </div>
