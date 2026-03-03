@@ -70,7 +70,7 @@ export default function IntegrationsSection() {
           <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-6 md:gap-8 mt-4">
             <div className="flex flex-col items-center">
               <span className="text-2xl md:text-3xl font-bold text-white">
-                500+
+                20+
               </span>
               <span className="text-xs text-white/40 uppercase tracking-widest">
                 {t("aiIntegrations")}
@@ -79,7 +79,7 @@ export default function IntegrationsSection() {
             <div className="w-px h-10 bg-white/10 hidden sm:block" />
             <div className="flex flex-col items-center">
               <span className="text-2xl md:text-3xl font-bold text-white">
-                50+
+                ✓
               </span>
               <span className="text-xs text-white/40 uppercase tracking-widest">
                 {t("businessCases")}
@@ -141,9 +141,6 @@ export default function IntegrationsSection() {
           >
             <Link href="#integrations">{t("exploreAll")}</Link>
           </Button>
-          <p className="text-sm text-white/30">
-            {t("noCreditCard")}
-          </p>
         </div>
       </div>
     </section>

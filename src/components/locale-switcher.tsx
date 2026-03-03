@@ -24,20 +24,18 @@ export function LocaleSwitcher() {
 
   return (
     <div
-      className={`flex items-center gap-1 bg-white/10 rounded-md p-0.5 transition-opacity duration-300 ${
-        isPending ? "opacity-60 pointer-events-none" : "opacity-100"
-      }`}
+      className={`flex items-center gap-1 bg-white/10 rounded-md p-0.5 transition-opacity duration-300 ${isPending ? "opacity-60 pointer-events-none" : "opacity-100"
+        }`}
     >
       {locales.map((loc) => (
         <button
           key={loc.code}
           onClick={() => handleSwitch(loc.code)}
           disabled={isPending}
-          className={`px-2 py-1 text-xs font-medium rounded transition-all duration-200 ${
-            locale === loc.code
-              ? "bg-white text-black"
-              : "text-white/70 hover:text-white"
-          }`}
+          className={`px-2 py-1 text-xs font-medium rounded transition-all duration-200 ${locale === loc.code
+            ? "bg-white text-black"
+            : "text-white/70 hover:text-white"
+            }`}
         >
           {loc.label}
         </button>

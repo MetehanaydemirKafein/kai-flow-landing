@@ -64,14 +64,14 @@ export const HeroHeader = () => {
                   alt="logo"
                   width={140}
                   height={140}
-                  className="h-16 lg:h-20 w-auto"
+                  className="h-16 lg:h-18 w-auto"
                 />
               </Link>
             </div>
 
-            {/* Center: Nav links (desktop only) */}
+            {/* Next to Logo: Nav links (desktop only) */}
             <div className="hidden lg:flex items-center">
-              <ul className="flex gap-6 text-sm items-center">
+              <ul className="flex gap-6 xl:gap-8 text-base font-bold items-center">
                 {navLinks.map((item, index) => (
                   <li key={index}>
                     <Link
@@ -215,6 +215,6 @@ export const HeroHeader = () => {
           </div>
         </div>
       </nav>
-    </header>
+    </header >
   );
 };
