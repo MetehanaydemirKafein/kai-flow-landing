@@ -3,12 +3,38 @@ import { useTranslations } from "next-intl";
 import { useDemoModal } from "./demo-modal-provider";
 
 interface DemoButtonProps {
-  variant?: "navbar" | "hero";
+  variant?: "navbar" | "hero" | "header";
+  className?: string;
 }
 
-export function DemoButton({ variant = "navbar" }: DemoButtonProps) {
+export function DemoButton({ variant = "navbar", className }: DemoButtonProps) {
   const t = useTranslations("hero");
   const { openModal } = useDemoModal();
+
+  // Header: çok kompakt buton (navbar'da GitHub butonu ile aynı boyut)
+  if (variant === "header") {
+    return (
+      <button
+        onClick={openModal}
+        className={className || "bg-white text-black hover:bg-gray-100 duration-150 flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium whitespace-nowrap"}
+      >
+        <svg
+          className="w-3.5 h-3.5"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+          />
+        </svg>
+        <span>{t("bookDemo")}</span>
+      </button>
+    );
+  }
 
   // Navbar: kompakt buton (header'da)
   const navbarClasses = "px-3.5 py-1.5 rounded-lg text-sm gap-1.5 shadow-[0_0_15px_rgba(168,85,247,0.3)] hover:shadow-[0_0_20px_rgba(168,85,247,0.5),0_0_40px_rgba(168,85,247,0.2)]";

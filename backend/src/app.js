@@ -34,14 +34,14 @@ const corsOptions = {
       typeof origin === 'string' &&
       (/^http:\/\/localhost:\d+$/.test(origin) || /^http:\/\/127\.0\.0\.1:\d+$/.test(origin));
 
-    console.log(`🔍 CORS Check - Origin: ${origin || 'no origin'}`);
+    console.log(`CORS Check - Origin: ${origin || 'no origin'}`);
 
     // Allow requests with no origin (like mobile apps or curl requests)
     if (!origin || allowedOrigins.includes(origin) || (isDev && isLocalhostAnyPort)) {
-      console.log('✅ CORS allowed');
+      console.log('CORS allowed');
       callback(null, true);
     } else {
-      console.log('❌ CORS rejected');
+      console.log('CORS rejected');
       callback(new Error('Not allowed by CORS'));
     }
   },
@@ -58,7 +58,7 @@ app.options('*', cors(corsOptions));
 
 // Health check endpoint
 app.get('/api/health', (req, res) => {
-  console.log('🏥 Health check requested');
+  console.log('Health check requested');
   res.status(200).json({
     success: true,
     message: 'Server is running',
@@ -71,7 +71,7 @@ app.use('/api/demo-request', demoRequestRoutes);
 
 // 404 handler
 app.use((req, res) => {
-  console.log(`❌ 404 Not Found: ${req.method} ${req.path}`);
+  console.log(`404 Not Found: ${req.method} ${req.path}`);
   res.status(404).json({
     success: false,
     message: 'Route not found',
@@ -80,7 +80,7 @@ app.use((req, res) => {
 
 // Error handler
 app.use((err, req, res, next) => {
-  console.error(`❌ Error: ${err.message}`);
+  console.error(`Error: ${err.message}`);
 
   res.status(err.status || 500).json({
     success: false,

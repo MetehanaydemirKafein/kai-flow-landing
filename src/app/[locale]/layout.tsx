@@ -5,6 +5,7 @@ import { routing } from "@/i18n/routing";
 import Footer from "@/components/footer";
 import "../globals.css";
 import { HeroHeader } from "@/components/header";
+import { DemoModalProvider } from "@/components/demo-modal-provider";
 
 export const metadata = {
   title: "Kai Flow - Visual Workflow Automation Platform",
@@ -64,9 +65,11 @@ export default async function LocaleLayout({
     <html lang={locale}>
       <body>
         <NextIntlClientProvider messages={messages}>
-          <HeroHeader />
-          {children}
-          <Footer />
+          <DemoModalProvider>
+            <HeroHeader />
+            {children}
+            <Footer />
+          </DemoModalProvider>
         </NextIntlClientProvider>
       </body>
     </html>
