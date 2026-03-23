@@ -1,6 +1,49 @@
 import DemoRequest from '../models/DemoRequest.js';
 import mongoose from 'mongoose';
 import { ensureConnection } from '../config/db.js';
+import axios from 'axios';
+
+// Verify reCAPTCHA token with Google
+async function verifyRecaptcha(token) {
+  const secretKey = process.env.RECAPTCHA_SECRET_KEY;
+  
+  if (!secretKey) {
+    console.warn('WARNING: RECAPTCHA_SECRET_KEY not configured in .env');
+    return { success: false, error: 'reCAPTCHA not configured on server' };
+  }
+
+  if (!token) {
+    return { success: false, error: 'reCAPTCHA token missing' };
+  }
+
+  try {
+    const response = await axios.post(
+      'https://www.google.com/recaptcha/api/siteverify',
+      null,
+      {
+        params: {
+          secret: secretKey,
+          response: token,
+        },
+      }
+    );
+
+    console.log('reCAPTCHA verification response:', response.data);
+
+    if (response.data.success) {
+      return { success: true, score: response.data.score };
+    } else {
+      return { 
+        success: false, 
+        error: 'reCAPTCHA verification failed',
+        errorCodes: response.data['error-codes']
+      };
+    }
+  } catch (error) {
+    console.error('reCAPTCHA verification error:', error.message);
+    return { success: false, error: 'reCAPTCHA verification request failed' };
+  }
+}
 
 export const createDemoRequest = async (req, res) => {
   try {
@@ -31,7 +74,26 @@ export const createDemoRequest = async (req, res) => {
       interests,
       acceptedKvkk,
       acceptedMarketing,
+      recaptchaToken,
     } = req.body;
+
+    // Verify reCAPTCHA token
+    console.log('Verifying reCAPTCHA token...');
+    const recaptchaResult = await verifyRecaptcha(recaptchaToken);
+    
+    if (!recaptchaResult.success) {
+      console.error('reCAPTCHA verification failed:', recaptchaResult.error);
+      return res.status(400).json({
+        success: false,
+        message: 'reCAPTCHA verification failed. Please try again.',
+        error: recaptchaResult.error,
+      });
+    }
+
+    console.log('reCAPTCHA verified successfully');
+    if (recaptchaResult.score !== undefined) {
+      console.log('reCAPTCHA score:', recaptchaResult.score);
+    }
 
     // Log database connection state
     console.log('MongoDB connected');

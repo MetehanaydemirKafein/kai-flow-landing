@@ -264,8 +264,27 @@ export function DemoRequestModal({ isOpen, onClose }: DemoRequestModalProps) {
     const apiUrl = `${backendBaseUrl.replace(/\/$/, "")}/api/demo-request`;
 
     try {
-      console.log("🚀 Starting form submission...");
-      console.log("📍 API URL:", apiUrl);
+      console.log('Starting form submission...');
+      console.log('API URL:', apiUrl);
+
+      // Get reCAPTCHA token
+      const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
+      let recaptchaToken = '';
+
+      if (siteKey && typeof window !== 'undefined' && (window as any).grecaptcha) {
+        try {
+          console.log('Executing reCAPTCHA...');
+          recaptchaToken = await (window as any).grecaptcha.execute(siteKey, { action: 'submit' });
+          console.log('reCAPTCHA token obtained');
+        } catch (recaptchaError) {
+          console.error('reCAPTCHA execution failed:', recaptchaError);
+          setErrors({ submit: 'reCAPTCHA verification failed. Please refresh the page and try again.' });
+          setIsSubmitting(false);
+          return;
+        }
+      } else {
+        console.warn('reCAPTCHA not configured or not loaded');
+      }
 
       const payload = {
         fullName: `${formData.firstName} ${formData.lastName}`,
@@ -279,9 +298,10 @@ export function DemoRequestModal({ isOpen, onClose }: DemoRequestModalProps) {
         interests: formData.interests,
         acceptedKvkk: formData.privacyConsent,
         acceptedMarketing: formData.newsletter,
+        recaptchaToken: recaptchaToken,
       };
 
-      console.log("📤 Sending payload:", JSON.stringify(payload, null, 2));
+      console.log('Sending payload:', JSON.stringify(payload, null, 2));
 
       const response = await fetch(apiUrl, {
         method: "POST",
@@ -291,15 +311,15 @@ export function DemoRequestModal({ isOpen, onClose }: DemoRequestModalProps) {
         body: JSON.stringify(payload),
       });
 
-      console.log("📥 Response received");
-      console.log("📥 Response status:", response.status);
-      console.log("📥 Response ok:", response.ok);
+      console.log('Response received');
+      console.log('Response status:', response.status);
+      console.log('Response ok:', response.ok);
 
       const responseData = await response.json();
-      console.log("📥 Response data:", JSON.stringify(responseData, null, 2));
+      console.log('Response data:', JSON.stringify(responseData, null, 2));
 
       if (response.ok && responseData.success) {
-        console.log("✅ Success! Demo request saved to MongoDB");
+        console.log('Success! Demo request saved to MongoDB');
         triggerConfetti();
         setSubmitSuccess(true);
         setFormData({
@@ -325,13 +345,13 @@ export function DemoRequestModal({ isOpen, onClose }: DemoRequestModalProps) {
       } else {
         // Backend returned an error
         const errorMessage = responseData?.message || responseData?.error || `Server error: ${response.status}`;
-        console.error("❌ Backend error:", errorMessage);
+        console.error('Backend error:', errorMessage);
         setErrors({ submit: errorMessage });
       }
     } catch (error) {
       const errorMessage = error instanceof Error ? error.message : "An error occurred";
-      console.error("❌ Network/Fetch error:", errorMessage);
-      console.error("❌ Full error object:", error);
+      console.error('Network/Fetch error:', errorMessage);
+      console.error('Full error object:', error);
       
       // More descriptive error message for user
       let userMessage = "Failed to connect to server";
