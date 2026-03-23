@@ -11,33 +11,41 @@ app.use(express.urlencoded({ extended: true }));
 // CORS Configuration
 const corsOptions = {
   origin: function (origin, callback) {
-    const allowedOrigins = [
-      'http://localhost:3000',
-      'http://localhost:3001',
-      'http://localhost:3002',
-      'http://localhost:3003',
-      'http://localhost:3004',
-      'http://localhost:3005',
-      'http://localhost:3006',
-      'http://localhost:3007',
-      'http://127.0.0.1:3000',
-      'http://127.0.0.1:3001',
-      'http://127.0.0.1:3002',
-      'http://127.0.0.1:3003',
-      'http://127.0.0.1:3004',
-      'http://127.0.0.1:3005',
-      'http://127.0.0.1:3006',
-      'http://127.0.0.1:3007',
-    ];
     const isDev = (process.env.NODE_ENV || 'development') !== 'production';
-    const isLocalhostAnyPort =
-      typeof origin === 'string' &&
-      (/^http:\/\/localhost:\d+$/.test(origin) || /^http:\/\/127\.0\.0\.1:\d+$/.test(origin));
-
-    console.log(`CORS Check - Origin: ${origin || 'no origin'}`);
-
-    // Allow requests with no origin (like mobile apps or curl requests)
-    if (!origin || allowedOrigins.includes(origin) || (isDev && isLocalhostAnyPort)) {
+    
+    // Production: Only allow origins from ALLOWED_ORIGINS env variable
+    if (!isDev) {
+      const allowedOrigins = process.env.ALLOWED_ORIGINS 
+        ? process.env.ALLOWED_ORIGINS.split(',').map(o => o.trim())
+        : [];
+      
+      console.log(`CORS Check (Production) - Origin: ${origin || 'no origin'}`);
+      
+      if (!origin) {
+        // Reject requests with no origin in production (server-to-server calls should use API keys)
+        console.log('CORS rejected: no origin in production');
+        callback(new Error('Not allowed by CORS'));
+        return;
+      }
+      
+      if (allowedOrigins.includes(origin)) {
+        console.log('CORS allowed');
+        callback(null, true);
+      } else {
+        console.log('CORS rejected: origin not in ALLOWED_ORIGINS');
+        callback(new Error('Not allowed by CORS'));
+      }
+      return;
+    }
+    
+    // Development: Allow localhost/127.0.0.1 on any port
+    const isLocalhost = typeof origin === 'string' && 
+      (/^https?:\/\/localhost:\d+$/.test(origin) || /^https?:\/\/127\.0\.0\.1:\d+$/.test(origin));
+    
+    console.log(`CORS Check (Development) - Origin: ${origin || 'no origin'}`);
+    
+    // Allow requests with no origin (Postman, curl, etc.) or localhost in development
+    if (!origin || isLocalhost) {
       console.log('CORS allowed');
       callback(null, true);
     } else {
