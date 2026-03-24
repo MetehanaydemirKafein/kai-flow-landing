@@ -283,7 +283,7 @@ export function DemoRequestModal({ isOpen, onClose }: DemoRequestModalProps) {
           return;
         }
       } else {
-        console.warn('reCAPTCHA not configured or not loaded');
+        console.log('? reCAPTCHA not configured - running in local testing mode (form will still work)');
       }
 
       const payload = {
