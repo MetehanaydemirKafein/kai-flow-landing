@@ -64,11 +64,15 @@ export default async function LocaleLayout({
   return (
     <html lang={locale}>
       <head>
-        <script
-          src={`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`}
-          async
-          defer
-        />
+        {process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY && 
+         process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY !== 'your_recaptcha_site_key_here' && 
+         !process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY.includes('your_') && (
+          <script
+            src={`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`}
+            async
+            defer
+          />
+        )}
       </head>
       <body>
         <NextIntlClientProvider messages={messages}>

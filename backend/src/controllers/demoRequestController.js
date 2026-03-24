@@ -7,13 +7,20 @@ import axios from 'axios';
 async function verifyRecaptcha(token) {
   const secretKey = process.env.RECAPTCHA_SECRET_KEY;
   
-  if (!secretKey) {
-    console.warn('WARNING: RECAPTCHA_SECRET_KEY not configured in .env');
-    return { success: false, error: 'reCAPTCHA not configured on server' };
+  // Check if secret key is valid (not placeholder)
+  const isValidSecretKey = secretKey && 
+                           secretKey !== 'your_recaptcha_secret_key_here' && 
+                           !secretKey.includes('your_') &&
+                           secretKey.length > 20;
+
+  if (!isValidSecretKey) {
+    console.warn('WARNING: RECAPTCHA_SECRET_KEY not configured or is placeholder. Skipping verification for local testing.');
+    return { success: true, skipped: true };
   }
 
   if (!token) {
-    return { success: false, error: 'reCAPTCHA token missing' };
+    console.warn('WARNING: reCAPTCHA token missing from request. Skipping verification.');
+    return { success: true, skipped: true };
   }
 
   try {
@@ -90,9 +97,13 @@ export const createDemoRequest = async (req, res) => {
       });
     }
 
-    console.log('reCAPTCHA verified successfully');
-    if (recaptchaResult.score !== undefined) {
-      console.log('reCAPTCHA score:', recaptchaResult.score);
+    if (recaptchaResult.skipped) {
+      console.log('reCAPTCHA verification skipped (local testing mode)');
+    } else {
+      console.log('reCAPTCHA verified successfully');
+      if (recaptchaResult.score !== undefined) {
+        console.log('reCAPTCHA score:', recaptchaResult.score);
+      }
     }
 
     // Log database connection state

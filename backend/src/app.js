@@ -38,13 +38,17 @@ const corsOptions = {
       return;
     }
     
-    // Development: Allow localhost/127.0.0.1 on any port
+    // Development: Allow localhost/127.0.0.1 and local network IPs on any port
     const isLocalhost = typeof origin === 'string' && 
-      (/^https?:\/\/localhost:\d+$/.test(origin) || /^https?:\/\/127\.0\.0\.1:\d+$/.test(origin));
+      (/^https?:\/\/localhost:\d+$/.test(origin) || 
+       /^https?:\/\/127\.0\.0\.1:\d+$/.test(origin) ||
+       /^https?:\/\/192\.168\.\d+\.\d+:\d+$/.test(origin) ||
+       /^https?:\/\/172\.\d+\.\d+\.\d+:\d+$/.test(origin) ||
+       /^https?:\/\/10\.\d+\.\d+\.\d+:\d+$/.test(origin));
     
     console.log(`CORS Check (Development) - Origin: ${origin || 'no origin'}`);
     
-    // Allow requests with no origin (Postman, curl, etc.) or localhost in development
+    // Allow requests with no origin (Postman, curl, etc.) or localhost/local network in development
     if (!origin || isLocalhost) {
       console.log('CORS allowed');
       callback(null, true);
