@@ -282,9 +282,7 @@ export function DemoRequestModal({ isOpen, onClose }: DemoRequestModalProps) {
           setIsSubmitting(false);
           return;
         }
-      } else {
-        console.log('? reCAPTCHA not configured - running in local testing mode (form will still work)');
-      }
+      } else {}
 
       const payload = {
         fullName: `${formData.firstName} ${formData.lastName}`,
