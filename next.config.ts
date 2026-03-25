@@ -22,7 +22,9 @@ if (
 }
 
 const nextConfig: NextConfig = {
+  trailingSlash: true,
   /* config options here */
+
   images: {
     remotePatterns: [
       {
@@ -42,32 +44,53 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: "/:locale(en|tr)/docs/0.1.5/:path*",
+        destination: "/docs/0.1.5/:path*",
+        permanent: false,
+      },
+      {
+        source: "/:locale(en|tr)/docs/0.1-alpha/:path*",
+        destination: "/docs/0.1-alpha/:path*",
+        permanent: false,
+      },
+      {
+        source: "/docs/0.1.5",
+        destination: "/docs/0.1.5/index.html",
+        permanent: false,
+      },
+      {
+        source: "/docs/0.1-alpha",
+        destination: "/docs/0.1-alpha/index.html",
+        permanent: false,
+      },
+      {
         source: "/docs",
-        destination: "/docs/index.html",
+        destination: "/docs/0.1.5/index.html",
         permanent: false,
       },
       {
         source: "/docs/",
-        destination: "/docs/index.html",
+        destination: "/docs/0.1.5/index.html",
         permanent: false,
       },
       {
         source: "/:locale(en|tr)/docs",
-        destination: "/docs/index.html",
+        destination: "/docs/0.1.5/index.html",
         permanent: false,
       },
       {
         source: "/:locale(en|tr)/docs/",
-        destination: "/docs/index.html",
+        destination: "/docs/0.1.5/index.html",
         permanent: false,
       },
       {
-        source: "/:locale(en|tr)/docs/:path*",
-        destination: "/docs/:path*",
+        source: "/:locale(en|tr)/docs/:path((?!0\\.1\\.5|0\\.1-alpha).*)",
+        destination: "/docs/0.1.5/:path*",
         permanent: false,
       },
     ];
   },
 };
+
 
 export default withNextIntl(nextConfig);
