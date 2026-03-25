@@ -39,6 +39,35 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: "/docs",
+        destination: "/docs/index.html",
+        permanent: false,
+      },
+      {
+        source: "/docs/",
+        destination: "/docs/index.html",
+        permanent: false,
+      },
+      {
+        source: "/:locale(en|tr)/docs",
+        destination: "/docs/index.html",
+        permanent: false,
+      },
+      {
+        source: "/:locale(en|tr)/docs/",
+        destination: "/docs/index.html",
+        permanent: false,
+      },
+      {
+        source: "/:locale(en|tr)/docs/:path*",
+        destination: "/docs/:path*",
+        permanent: false,
+      },
+    ];
+  },
 };
 
 export default withNextIntl(nextConfig);
