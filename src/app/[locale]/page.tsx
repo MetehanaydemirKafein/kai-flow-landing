@@ -54,7 +54,7 @@ function HomeContent() {
           title: t("features.tabs.export.title"),
           description: t("features.tabs.export.description"),
           buttonText: t("features.tabs.export.button"),
-          imageSrc: "/export.png",
+          imageSrc: "/kai-flow-export.png",
           imageAlt: "Data Export",
         },
       },

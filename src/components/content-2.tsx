@@ -66,14 +66,14 @@ export default function ContentSection() {
                 <div className="relative rounded-2xl p-[3px] bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500">
                 <div className="rounded-[calc(1rem-3px)] bg-black p-2">
                   <Image
-                    src="/cds.png"
+                    src="/kai-flow-runtime.png"
                     className="hidden rounded-[12px] dark:block"
                     alt="workflow builder dark"
                     width={1207}
                     height={929}
                   />
                   <Image
-                    src="/cds.png"
+                    src="/kai-flow-runtime.png"
                     className="rounded-[12px] shadow dark:hidden"
                     alt="workflow builder light"
                     width={1207}
