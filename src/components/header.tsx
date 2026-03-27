@@ -7,11 +7,11 @@ import { useScroll } from "motion/react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { LocaleSwitcher } from "./locale-switcher";
+import { DemoButton } from "./demo-button";
 
 export const HeroHeader = () => {
   const [menuState, setMenuState] = React.useState(false);
   const [scrolled, setScrolled] = React.useState(false);
-  const [showComingSoon, setShowComingSoon] = React.useState(false);
   const [starCount, setStarCount] = React.useState<number | null>(null);
   const t = useTranslations("header");
 
@@ -89,28 +89,10 @@ export const HeroHeader = () => {
             <div className="flex items-center gap-3">
               {/* Desktop action buttons */}
               <div className="hidden lg:flex items-center gap-3">
-                <button
-                  onClick={() => {
-                    setShowComingSoon(true);
-                    setTimeout(() => setShowComingSoon(false), 2000);
-                  }}
+                <DemoButton
+                  variant="header"
                   className="bg-white text-black hover:bg-gray-100 duration-150 flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium whitespace-nowrap"
-                >
-                  <svg
-                    className="w-3.5 h-3.5"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                    />
-                  </svg>
-                  <span>{showComingSoon ? t("comingSoon") : t("bookDemo")}</span>
-                </button>
+                />
                 <Link
                   href="https://github.com/kafein-product-space/KAI-Fusion"
                   target="_blank"
@@ -163,28 +145,10 @@ export const HeroHeader = () => {
                     </li>
                   ))}
                   <li>
-                    <button
-                      onClick={() => {
-                        setShowComingSoon(true);
-                        setTimeout(() => setShowComingSoon(false), 2000);
-                      }}
+                    <DemoButton
+                      variant="header"
                       className="bg-white text-black hover:bg-gray-100 duration-150 flex items-center gap-2 px-4 py-2 rounded-md font-medium w-full justify-center"
-                    >
-                      <svg
-                        className="w-4 h-4"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                        />
-                      </svg>
-                      <span>{showComingSoon ? t("comingSoon") : t("bookDemo")}</span>
-                    </button>
+                    />
                   </li>
                   <li>
                     <Link

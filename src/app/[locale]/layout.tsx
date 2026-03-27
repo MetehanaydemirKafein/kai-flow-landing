@@ -5,6 +5,7 @@ import { routing } from "@/i18n/routing";
 import Footer from "@/components/footer";
 import "../globals.css";
 import { HeroHeader } from "@/components/header";
+import { DemoModalProvider } from "@/components/demo-modal-provider";
 
 export const metadata = {
   title: "Kai Flow - Visual Workflow Automation Platform",
@@ -62,11 +63,24 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale}>
+      <head>
+        {process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY && 
+         process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY !== 'your_recaptcha_site_key_here' && 
+         !process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY.includes('your_') && (
+          <script
+            src={`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`}
+            async
+            defer
+          />
+        )}
+      </head>
       <body>
         <NextIntlClientProvider messages={messages}>
-          <HeroHeader />
-          {children}
-          <Footer />
+          <DemoModalProvider>
+            <HeroHeader />
+            {children}
+            <Footer />
+          </DemoModalProvider>
         </NextIntlClientProvider>
       </body>
     </html>
