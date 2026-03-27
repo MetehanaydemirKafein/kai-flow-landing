@@ -67,7 +67,7 @@ function HomeContent() {
           title: t("features.tabs.rag.title"),
           description: t("features.tabs.rag.description"),
           buttonText: t("features.tabs.rag.button"),
-          imageSrc: "/rag.png",
+          imageSrc: "/kai-flow-rag.png",
           imageAlt: "RAG Implementation",
         },
       },

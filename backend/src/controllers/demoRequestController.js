@@ -63,6 +63,22 @@ export const createDemoRequest = async (req, res) => {
     
     if (!isConnected) {
       console.error('MongoDB connection failed after retry');
+      
+      // DEVELOPMENT ONLY: Mock mode for testing without MongoDB
+      if (process.env.NODE_ENV === 'development') {
+        console.warn('⚠️ MOCK MODE: Accepting request without saving to database');
+        return res.status(201).json({
+          success: true,
+          message: 'Demo request received (MOCK MODE - not saved to database)',
+          data: {
+            id: 'mock-' + Date.now(),
+            email: req.body.email,
+            fullName: req.body.fullName,
+            createdAt: new Date().toISOString(),
+          },
+        });
+      }
+      
       return res.status(503).json({
         success: false,
         message: 'Database connection failed. Please try again later.',
@@ -103,6 +119,16 @@ export const createDemoRequest = async (req, res) => {
       console.log('reCAPTCHA verified successfully');
       if (recaptchaResult.score !== undefined) {
         console.log('reCAPTCHA score:', recaptchaResult.score);
+        
+        // Check score threshold (0.5 is recommended for form submissions)
+        if (recaptchaResult.score < 0.5) {
+          console.error('reCAPTCHA score too low:', recaptchaResult.score);
+          return res.status(400).json({
+            success: false,
+            message: 'Security verification failed. Please try again.',
+            error: 'Score below threshold',
+          });
+        }
       }
     }
 
