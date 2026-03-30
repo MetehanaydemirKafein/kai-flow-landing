@@ -54,7 +54,7 @@ function HomeContent() {
           title: t("features.tabs.export.title"),
           description: t("features.tabs.export.description"),
           buttonText: t("features.tabs.export.button"),
-          imageSrc: "/export.png",
+          imageSrc: "/kai-flow-cds.png",
           imageAlt: "Data Export",
         },
       },
@@ -67,7 +67,7 @@ function HomeContent() {
           title: t("features.tabs.rag.title"),
           description: t("features.tabs.rag.description"),
           buttonText: t("features.tabs.rag.button"),
-          imageSrc: "/rag.png",
+          imageSrc: "/kai-flow-rag.png",
           imageAlt: "RAG Implementation",
         },
       },
@@ -104,7 +104,7 @@ function HomeContent() {
         <div className="overflow-x-hidden">
           <WavyBackground containerClassName="pt-20 lg:pt-24" className="max-w-6xl mx-auto pb-8 pt-2 px-4">
             <div className="flex flex-col items-center">
-              <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-7xl text-white font-extrabold inter-var text-center bg-gradient-to-r from-white via-gray-100 to-gray-300 bg-clip-text text-transparent leading-tight">
+              <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-7xl font-extrabold inter-var text-center bg-gradient-to-r from-white via-gray-100 to-gray-300 bg-clip-text text-transparent leading-tight">
                 {t("hero.title")}
               </h1>
               <h2 className="text-base sm:text-lg md:text-2xl lg:text-3xl text-white/90 font-semibold inter-var text-center mt-2 mb-1">
@@ -127,7 +127,7 @@ function HomeContent() {
                 </svg>
                 {t("hero.github")}
               </a>
-              <DemoButton />
+              <DemoButton variant="hero" />
             </div>
 
             <div className="mt-8 flex justify-center flex-1 min-h-0">
