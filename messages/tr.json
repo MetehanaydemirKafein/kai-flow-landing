@@ -1,5 +1,6 @@
 {
   "header": {
+    "docs": "Dökümantasyon",
     "features": "Özellikler",
     "integrations": "Entegrasyonlar",
     "content": "İçerik",
@@ -30,10 +31,10 @@
         "button": "Sohbeti Deneyin"
       },
       "export": {
-        "label": "Dışa Aktar",
-        "badge": "İş Akışı Dışa Aktarımı",
-        "title": "Agent konfigürasyonlarını paylaşın ve yeniden kullanın.",
-        "description": "Karmaşık ajan grafiklerinizi taşınabilir JSON formatında dışa aktarın. İş akışlarınızı takımlar arasında paylaşın veya farklı projeler arasında kolayca taşıyın. Ajanlarınız, tüm konfigürasyon ve çalışma mantıklarıyla birlikte her yere sizinle gelir.",
+        "label": "Dağıt",
+        "badge": "Sınırsız Dağıtım & Paylaşım",
+        "title": "Geliştirdiğiniz Ajanları Dünyaya Açın",
+        "description": "Karmaşık ajan grafiklerinizi ister taşınabilir JSON bundle'ı olarak dışa aktarın, ister web sitenize entegre edilebilir bir asistan (Widget) olarak yayınlayın. Webhook, Zamanlanmış Görevler, Kafka ve Docker desteğiyle ajanlarınızı her platformda canlıya alın. Tüm konfigürasyon, hafıza ve zeka artık her yerde sizinle.",
         "button": "Konfigürasyonu Dışa Aktar"
       },
       "rag": {
@@ -44,7 +45,7 @@
         "button": "RAG Kurun"
       },
       "lowCode": {
-        "label": "Düşük Kod",
+        "label": "Az Kod",
         "badge": "Görsel Oluşturucu",
         "title": "Görsel Kanvas Üzerinde AI Orkestrasyonu",
         "description": "Karmaşık LLM zincirlerini, mantıksal dallanmaları ve döngüsel süreçleri sürükle-bırak yöntemiyle tasarlayın. İleri düzey senaryolar için özel Python, JavaScript kod blokları ekleyerek esnekliğinizi koruyun.",
@@ -118,5 +119,52 @@
   "footer": {
     "copyright": "© {year} Kafein. Tüm hakları saklıdır",
     "poweredBy": "Powered by"
+  },
+  "demoForm": {
+    "title": "Demo Talep Et",
+    "description": "KAI Flow yapay zekâ ile iş akışlarınızda nasıl devrim yaratabileceğimizi keşfedin. Aşağıdaki formu doldurun, ekibimiz 24 saat içinde sizinle iletişime geçecektir.",
+    "personalInfo": "Kişisel Bilgiler",
+    "companyDetails": "Şirket Bilgileri",
+    "interests": "Hangi konular ilginizi çekiyor?",
+    "tellMore": "Bize daha fazla anlatın",
+    "firstName": "Adı",
+    "lastName": "Soyadı",
+    "workEmail": "İş E-postası",
+    "jobTitle": "Pozisyon",
+    "country": "Ülke",
+    "phoneNumber": "Telefon Numarası",
+    "companyName": "Şirket Adı",
+    "companySize": "Şirket Büyüklüğü",
+    "selectSize": "Boyut seçin",
+    "companySizes": {
+      "1-10": "1-10",
+      "11-50": "11-50",
+      "51-200": "51-200",
+      "201-500": "201-500",
+      "500+": "500+"
+    },
+    "interests_options": {
+      "workManagement": "İş ve proje yönetimi",
+      "salesCRM": "Satış ve CRM",
+      "productManagement": "Ürün yönetimi",
+      "softwareDevelopment": "Yazılım geliştirme",
+      "productSoftwareDevelopment": "Ürün ve yazılım geliştirme",
+      "emailMarketing": "E-posta pazarlama",
+      "agencyFactory": "Acente Fabrikası",
+      "ticketingServiceManagement": "Biletleme ve hizmet yönetimi",
+      "other": "Diğer"
+    },
+    "tellMoreQuestion": "KAI Flow'u nasıl kullanmayı planlıyorsunuz?",
+    "tellMorePlaceholder": "Kullanım senaryonuzu, ekip büyüklüğünüzü ve mevcut zorluklarınızı bizimle paylaşın...",
+    "newsletter": "Kampanya ve yeniliklerden haberdar olmak istiyorum.",
+    "privacy": "Paylaştığım kişisel bilgilerin Aydınlatma Metni kapsamında işlenmesine izin veriyorum. İptal hakkım saklıdır.",
+    "clarificationText": "Aydınlatma Metni",
+    "recaptcha": "Bu site reCAPTCHA tarafından korunmaktadır.",
+    "privacyLink": "Gizlilik",
+    "termsLink": "Şartlar",
+    "submitButton": "Demo Talep Et",
+    "successTitle": "Başarıyla Gönderildi!",
+    "successMessage": "Talebiniz alındı. Ekibimiz 24 saat içinde sizinle görüşme sağlamak için iletişime geçecektir.",
+    "successSubtext": "KAI Flow'a ilginiz için teşekkür ederiz."
   }
 }
